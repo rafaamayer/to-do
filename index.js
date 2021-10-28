@@ -1,4 +1,4 @@
-import { criarBotao, concluirTarefa, deletarTarefa } from "./botao.js";
+import { criarBotao, concluirTarefa, deletarTarefa } from "./components/botao.js";
 
 const criarTarefa = (evento) => {
     evento.preventDefault();
