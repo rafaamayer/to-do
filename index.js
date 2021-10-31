@@ -25,7 +25,7 @@ const criarTarefa = (evento) => {
     const tarefa = document.createElement("li");
     tarefa.classList.add("task");
     
-    const conteudo = `<p class="content">${valor} ${data}</p>`;
+    const conteudo = `<p class="content">${data} ° ${valor}</p>`;
 
     tarefa.innerHTML = conteudo
 
