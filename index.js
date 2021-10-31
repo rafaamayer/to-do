@@ -16,7 +16,11 @@ const handleValores = () => {
     return informacoes
 }
 
-const criarTarefa = (evento) => {
+const armazenarValores = () => {
+    localStorage.setItem("tarefas", JSON.stringify(handleValores()))
+}
+
+const criarTarefa = (evento) => {    
     evento.preventDefault();
 
     const novosValores = handleValores()
@@ -34,6 +38,8 @@ const criarTarefa = (evento) => {
 
     const lista = document.querySelector("[data-list]");
     
+    armazenarValores()
+
     lista.appendChild(tarefa);
 }
 
