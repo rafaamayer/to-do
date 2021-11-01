@@ -1,5 +1,5 @@
 import { criarBotao, concluirTarefa, deletarTarefa } from "./botao.js";
-import { armazenarValores } from "./server.js";
+import { armazenarValores } from "./storage.js";
 
 const handleValores = () => {
 
