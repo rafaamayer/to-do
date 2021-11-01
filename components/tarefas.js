@@ -7,7 +7,7 @@ const handleValores = () => {
     const data = document.querySelector("[data-form-date]");
 
     const valor = input.value;
-    const valorData = moment(data.value).format('DD/MM/YYYY HH:mm');
+    const valorData = moment(data.value).format('DD/MM/YYYY HH:mm'); 
 
     const informacoes = {
         'valor': valor,
