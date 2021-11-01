@@ -1,6 +1,5 @@
 import { criarBotao, concluirTarefa, deletarTarefa } from "./botao.js";
-
-const tarefas = []
+import { armazenarValores } from "./server.js";
 
 const handleValores = () => {
 
@@ -18,12 +17,7 @@ const handleValores = () => {
     return informacoes
 }
 
-const armazenarValores = () => {
-
-    tarefas.push(handleValores())
-    localStorage.setItem("tarefas", JSON.stringify(tarefas))
-}
-
+// TODO create a step verifie if has task
 const criarTarefa = (evento) => {    
     evento.preventDefault();
 
