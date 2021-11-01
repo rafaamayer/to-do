@@ -1,5 +1,7 @@
 import { criarBotao, concluirTarefa, deletarTarefa } from "./botao.js";
 
+const tarefas = []
+
 const handleValores = () => {
 
     const input = document.querySelector("[data-form-input]");
@@ -17,7 +19,9 @@ const handleValores = () => {
 }
 
 const armazenarValores = () => {
-    localStorage.setItem("tarefas", JSON.stringify(handleValores()))
+
+    tarefas.push(handleValores())
+    localStorage.setItem("tarefas", JSON.stringify(tarefas))
 }
 
 const criarTarefa = (evento) => {    
