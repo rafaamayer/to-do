@@ -21,8 +21,8 @@ const handleValores = () => {
 const criarTarefa = (evento) => {    
     evento.preventDefault();
 
-    const novosValores = handleValores()
-    const {valor, data} = novosValores
+    const novosValores = handleValores();
+    const {valor, data} = novosValores;
 
     const tarefa = document.createElement("li");
     tarefa.classList.add("task");
@@ -36,7 +36,7 @@ const criarTarefa = (evento) => {
 
     const lista = document.querySelector("[data-list]");
     
-    armazenarValores()
+    armazenarValores();
 
     lista.appendChild(tarefa);
 }
