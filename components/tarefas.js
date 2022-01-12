@@ -18,7 +18,7 @@ const handleValores = () => {
 }
 
 // TODO create a step verifie if has task
-const criarTarefa = (evento) => {    
+const criaTarefa = (evento) => {    
     evento.preventDefault();
 
     const novosValores = handleValores();
@@ -44,4 +44,4 @@ const renderizaTarefa = ({data, valor}) => {
     lista.appendChild(tarefa);
 }
 
-export { criarTarefa, handleValores, renderizaTarefa }
+export { criaTarefa, handleValores, renderizaTarefa }
