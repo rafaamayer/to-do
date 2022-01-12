@@ -60,14 +60,6 @@ body {
   margin: 0;
 }
 
-.app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
-}
-
 .todo-list {
   background-color: #0B2027;
   font-family: "Space Mono", monospace;
