@@ -10,8 +10,7 @@ const criarBotao = (tipo, classe, metodo) => {
 }
 
 const concluirTarefa = (evento) => {
-    const botaoClicado = evento.target
-        
+    const botaoClicado = evento.target   
     const tarefaMarcada = botaoClicado.parentElement
     
     tarefaMarcada.classList.toggle("done")
@@ -19,7 +18,6 @@ const concluirTarefa = (evento) => {
 
 const deletarTarefa = (evento) => {
     const botaoClicado = evento.target
-
     const tarefaMarcada = botaoClicado.parentElement
     
     tarefaMarcada.remove()
