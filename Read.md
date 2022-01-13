@@ -1,5 +1,4 @@
 TODO:
 
-1 - Lidar com data inválida
-2 - Validação de formulário
-3 - Mostrar dados do storage
+1 - Validação de formulário
+2 - Deletar dado do locaStorage se for apertado botão de deletar

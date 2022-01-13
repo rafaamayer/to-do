@@ -21,7 +21,7 @@ const handleValores = () => {
     }
 }
 
-// TODO create a step verifie if has task
+
 const criaTarefa = (evento) => {    
     evento.preventDefault();
 
