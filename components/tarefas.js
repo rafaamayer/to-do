@@ -7,14 +7,18 @@ const handleValores = () => {
     const data = document.querySelector("[data-form-date]");
 
     const valor = input.value;
-    const valorData = moment(data.value).format('DD/MM/YYYY HH:mm'); 
+    const valorData = moment(data.value).format('DD/MM/YYYY HH:mm');
 
     const informacoes = {
         'valor': valor,
         'data': valorData
     }
 
-    return informacoes
+    if (informacoes.data === 'Invalid date') {        
+        return alert("Insert a valid date")
+    } else {
+        return informacoes
+    }
 }
 
 // TODO create a step verifie if has task
