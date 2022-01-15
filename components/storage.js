@@ -14,7 +14,7 @@ const carregarValores = () => {
     
     const tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
     
-    tarefas.forEach(tarefa => {renderizaTarefa(tarefa)});
+    //tarefas.forEach(tarefa => {renderizaTarefa(tarefa)});
    
 }
 export { armazenarValores, carregarValores}

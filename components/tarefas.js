@@ -7,7 +7,7 @@ const handleValores = () => {
     const data = document.querySelector("[data-form-date]");
 
     const valor = input.value;
-    const valorData = moment(data.value).format('DD/MM/YYYY HH:mm');
+    const valorData = moment(data.value).format('DD/MM/YYYY');
 
     const informacoes = {
         'valor': valor,
@@ -27,25 +27,38 @@ const criaTarefa = (evento) => {
 
     const novosValores = handleValores();
 
-    renderizaTarefa(novosValores)
+    criaData(novosValores)
+    //renderizaTarefa(novosValores)
     armazenarValores();
 }
 
 // TODO if deletar tarefa then remove from local
-const renderizaTarefa = ({data, valor}) => {
+
+const renderizaTarefa = ({valor}) => {
     const tarefa = document.createElement("li");  
     tarefa.classList.add("task");
     
-    const conteudo = `<p class="content">${data} ° ${valor}</p>`;
+    const conteudo = `<p class="content">${valor}</p>`;
 
     tarefa.innerHTML = conteudo
 
     tarefa.appendChild(criarBotao("Concluir", "check-button", concluirTarefa));
     tarefa.appendChild(criarBotao("Deletar", null, deletarTarefa));
 
-    const lista = document.querySelector("[data-list]");
+    const lista = document.getElementsByClassName("content-data");
 
     lista.appendChild(tarefa);
 }
 
-export { criaTarefa, handleValores, renderizaTarefa }
+const criaData = ({data}) => {
+    const dataList = document.createElement("li"); 
+    const conteudo = `<p class="content-data">${data}</p>`;
+
+    dataList.innerHTML = conteudo
+
+    const lista = document.querySelector("[data-list]");
+    
+    lista.appendChild(dataList);
+}
+
+export { criaTarefa, handleValores, renderizaTarefa, criaData }
