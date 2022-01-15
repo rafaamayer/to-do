@@ -28,26 +28,37 @@ const criaTarefa = (evento) => {
     const novosValores = handleValores();
 
     criaData(novosValores)
-    //renderizaTarefa(novosValores)
     armazenarValores();
 }
 
 // TODO if deletar tarefa then remove from local
 
-const renderizaTarefa = ({valor}) => {
+const renderizaTarefa = ({data, valor}) => {
     const tarefa = document.createElement("li");  
     tarefa.classList.add("task");
     
-    const conteudo = `<p class="content">${valor}</p>`;
+    const conteudo = `<p class="content">${data} ° ${valor}</p>`;
 
     tarefa.innerHTML = conteudo
 
     tarefa.appendChild(criarBotao("Concluir", "check-button", concluirTarefa));
     tarefa.appendChild(criarBotao("Deletar", null, deletarTarefa));
 
-    const lista = document.querySelector("[data-order]");
+    const lista = document.querySelectorAll("[data-order]");
+    const validacaoData = data
 
-    lista.appendChild(tarefa);
+    lista.forEach(item => {
+
+        const dataSelecionada = item.innerHTML
+
+        if (dataSelecionada == validacaoData){
+            item.appendChild(tarefa);
+        } else{
+            return
+        }
+    
+    })
+    //
 }
 
 const criaData = ({data, valor}) => {
@@ -60,7 +71,7 @@ const criaData = ({data, valor}) => {
 
     lista.appendChild(dataList);
 
-    renderizaTarefa({valor})
+    renderizaTarefa({data, valor})
 }
 
 export { criaTarefa, handleValores, renderizaTarefa, criaData }
