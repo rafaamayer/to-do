@@ -1,4 +1,4 @@
-# to-do list made by vanilla JavaScript
+# to-do list made of vanilla JavaScript
 
 # there are some functionalities to be improve such as:
 
