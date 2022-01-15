@@ -45,20 +45,22 @@ const renderizaTarefa = ({valor}) => {
     tarefa.appendChild(criarBotao("Concluir", "check-button", concluirTarefa));
     tarefa.appendChild(criarBotao("Deletar", null, deletarTarefa));
 
-    const lista = document.getElementsByClassName("content-data");
+    const lista = document.querySelector("[data-order]");
 
     lista.appendChild(tarefa);
 }
 
-const criaData = ({data}) => {
+const criaData = ({data, valor}) => {
     const dataList = document.createElement("li"); 
-    const conteudo = `<p class="content-data">${data}</p>`;
+    const conteudo = `<p class="content-data" data-order>${data}</p>`;
 
     dataList.innerHTML = conteudo
 
     const lista = document.querySelector("[data-list]");
-    
+
     lista.appendChild(dataList);
+
+    renderizaTarefa({valor})
 }
 
 export { criaTarefa, handleValores, renderizaTarefa, criaData }
